@@ -6,7 +6,7 @@ A script to provision a new app on a cloud server
 
 No more fiddling around with nginx or files. The create script punts out a skeleton express app and configures nginx for you, the deploy script pushes up your server.js and your dist folder. This means its easily integrated with a react app, once you've bundle everything to the dist folder, all thats needed is the server.js and the dist folder.
 
-I felt there was a gap between creating a production build and deploying to a nonon PAAS environment.
+I felt there was a gap between creating a production build and deploying to a non PAAS environment.
 
 
 # How do I run it?
