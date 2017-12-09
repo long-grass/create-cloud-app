@@ -8,6 +8,14 @@ No more fiddling around with nginx or files. The create script punts out a skele
 
 I felt there was a gap between creating a production build and deploying to a nonon PAAS environment.
 
+
+### How do I run it?
+
+```
+./bin/create.sh
+./bin/deploy.sh
+```
+
 ### What it does
 
 # create.sh
