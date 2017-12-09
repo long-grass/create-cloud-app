@@ -11,6 +11,7 @@ I felt there was a gap between creating a production build and deploying to a no
 
 # How do I run it?
 
+To create an app called cadiz
 ```
 ./bin/create.sh cadiz
 ./bin/deploy.sh
