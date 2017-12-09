@@ -1,6 +1,6 @@
 # Sample React structure (truncated)
 
-Below is a truncated sample app structure for an application called Cadiz that uses this deploy script
+Below is a truncated sample app structure for an application called Cadiz that uses this deploy script. In this example the build script would compile the app tto the dist folder, and the deploy script will update the cloud server from the sample that was build with the create script.
 
 ```
 cadiz git:(master) cat package.json
