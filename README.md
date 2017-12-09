@@ -12,7 +12,7 @@ I felt there was a gap between creating a production build and deploying to a no
 # How do I run it?
 
 ```
-./bin/create.sh
+./bin/create.sh cadiz
 ./bin/deploy.sh
 ```
 
@@ -20,7 +20,7 @@ I felt there was a gap between creating a production build and deploying to a no
 
 ### create.sh
 
-1. creates an nginx file for your app, with app name and port set
+1. creates an nginx file for your app, with app name (eg cadiz) and port set
 2. creates a directory for your app, and uploads the template server.js file, and a dist folder with an index.html inside
 3. install express
 4. starts your app with pm2 
