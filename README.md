@@ -14,8 +14,16 @@ I felt there was a gap between creating a production build and deploying to a no
 To create an app called cadiz
 ```
 ./bin/create.sh cadiz
+```
+
+This will create a skeleton app available at eg cadiz.malham.io
+
+```
 ./bin/deploy.sh
 ```
+
+Deploy script to push to name of app contained in APPNAME
+
 
 # What it does
 
