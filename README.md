@@ -25,7 +25,7 @@ This will create a skeleton app available at eg cadiz.malham.io
 Deploy script to push to name of app contained in APPNAME
 
 
-# What it does
+# What does it do?
 
 ### create.sh
 
@@ -51,7 +51,7 @@ deploy: './bin/deploy.sh'
 2. Nginx installed and running. 
 3. PM2 installed and running. Though this could be replaced with something like forever.
 
-# What it doesn't do (yet?)
+# What doesn't it do?
 
 1. Sets up nginx or pm2 for you. Really this is intended for my working environment, but shouldnt be too difficult to modify for other environments
 2. Checks for port duplication. Its your responsibility to check you're not uploading a new app on a port an existing app is running on. This is next
