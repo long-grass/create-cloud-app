@@ -1,9 +1,10 @@
+source bin/config.env
 if (( $# != 1 )); then
   echo "please name your app!"
   exit
 fi
 port=$(grep port server.js | head -1 | awk -F= '{ print $2 }')
-export portfree=$(ssh root@188.226.163.24 lsof -i tcp:$port)
+export portfree=$(ssh root@$server lsof -i tcp:$port)
 echo $port
 if [  "$portfree" ];
   then echo 'that port is in use on remote server'
@@ -13,7 +14,7 @@ cp nginx/template.conf nginx/$1.conf
 sed -i "" -e "s/app_name/$1/" nginx/$1.conf
 sed -i "" -e "s/port/$port/" nginx/$1.conf
 echo "appname=$1" >> bin/config.env
-sftp root@188.226.163.24 << EOF
+sftp root@$server << EOF
   cd /etc/nginx/conf.d
   put nginx/$1.conf
   mkdir /var/www/html/$1
@@ -23,7 +24,7 @@ sftp root@188.226.163.24 << EOF
   put -r dist
   bye
 EOF
-ssh root@188.226.163.24 << EOF
+ssh root@$server << EOF
   cd /var/www/html/$1
   npm install express
   pm2 start server.js --name $1
