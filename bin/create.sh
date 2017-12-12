@@ -3,7 +3,12 @@ if (( $# != 1 )); then
   exit
 fi
 port=$(grep port server.js | head -1 | awk -F= '{ print $2 }')
+export portfree=$(ssh root@188.226.163.24 lsof -i tcp:$port)
 echo $port
+if [  "$portfree" ];
+  then echo 'that port is in use on remote server'
+  exit
+fi
 cp nginx/template.conf nginx/$1.conf
 sed -i "" -e "s/app_name/$1/" nginx/$1.conf
 sed -i "" -e "s/port/$port/" nginx/$1.conf
