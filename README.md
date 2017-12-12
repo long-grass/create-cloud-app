@@ -54,7 +54,7 @@ deploy: './bin/deploy.sh'
 # What doesn't it do?
 
 1. Sets up nginx or pm2 for you. Really this is intended for my working environment, but shouldnt be too difficult to modify for other environments
-2. Checks for port duplication. Its your responsibility to check you're not uploading a new app on a port an existing app is running on. This is next
+
 
 # Example
 
