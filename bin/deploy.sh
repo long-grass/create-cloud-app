@@ -1,3 +1,4 @@
-app=$(cat APPNAME)
-rsync --rsh=ssh -av server.js "root@188.226.163.24:/var/www/html/$app"
-rsync --rsh=ssh -av dist "root@188.226.163.24:/var/www/html/$app"
+source bin/config.env
+rsync --rsh=ssh -av server.js "root@$server:/var/www/html/$appname"
+rsync --rsh=ssh -av dist "root@$server:/var/www/html/$appname"
+ssh root@$server pm2 restart $appname

@@ -7,7 +7,7 @@ echo $port
 cp nginx/template.conf nginx/$1.conf
 sed -i "" -e "s/app_name/$1/" nginx/$1.conf
 sed -i "" -e "s/port/$port/" nginx/$1.conf
-echo $1 > APPNAME
+echo "appname=$1" >> bin/config.env
 sftp root@188.226.163.24 << EOF
   cd /etc/nginx/conf.d
   put nginx/$1.conf
@@ -21,6 +21,6 @@ EOF
 ssh root@188.226.163.24 << EOF
   cd /var/www/html/$1
   npm install express
-  pm2 start server.js
+  pm2 start server.js --name $1
   service nginx reload
 EOF
