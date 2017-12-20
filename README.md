@@ -16,13 +16,13 @@ To create an app called cadiz
 ./bin/create.sh cadiz
 ```
 
-This will create a skeleton app available at eg cadiz.malham.io
+This will create a skeleton app available at eg cadiz.malham.io and add the name to config.env
 
 ```
 ./bin/deploy.sh
 ```
 
-Deploy script to push to name of app contained in APPNAME
+Deploy script to push to name of app contained in config.env
 
 
 # What does it do?
