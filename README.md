@@ -1,5 +1,7 @@
 # TLDR / What is it?
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cerico/create-cloud-app.svg)](https://greenkeeper.io/)
+
 A script to provision a new app on a cloud server
 
 # Why?
