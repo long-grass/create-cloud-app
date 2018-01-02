@@ -59,3 +59,8 @@ deploy: './bin/deploy.sh'
 # Example
 
 See example directory for structuring of app
+
+## TODO
+
+* [ ]  Clean up script to remove template files
+* [ ]  Edits package.json with name of app
