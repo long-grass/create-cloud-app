@@ -11,12 +11,12 @@ I felt there was a gap between creating a production build and deploying to a no
 
 # How do I run it?
 
-To create an app called seaside, running as subdomain at io37.cc
+To create an app called postcard, running as subdomain at io37.ch
 ```
-./bin/create.sh seaside.io37.cc
+./bin/create.sh postcard.io37.ch
 ```
 
-This will create a skeleton react/node/nginx app available at https://seaside.io37.cc and add the name to config.env
+This will create a skeleton react/node/nginx app available at https://postcard.io37.ch and add the name to config.env
 
 ```
 ./bin/deploy.sh

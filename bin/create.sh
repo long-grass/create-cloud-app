@@ -36,4 +36,3 @@ ssh root@$server << EOF
 	/opt/letsencrypt/letsencrypt-auto certonly --standalone -d $1
 	service nginx start
 EOF
-chmod 400 ./bin/create.sh
