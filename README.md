@@ -13,10 +13,10 @@ I felt there was a gap between creating a production build and deploying to a no
 
 To create an app called cadiz
 ```
-./bin/create.sh cadiz
+./bin/create.sh seaside.io37.cc
 ```
 
-This will create a skeleton app available at eg cadiz.malham.io and add the name to config.env
+This will create a skeleton app available at seaside.io37.cc and add the name to config.env
 
 ```
 ./bin/deploy.sh
@@ -48,8 +48,9 @@ deploy: './bin/deploy.sh'
 # Requirements
 
 1. CentOS on your cloud server, though I'll add in a Debian/Ubuntu version too
-2. Nginx installed and running. 
-3. PM2 installed and running. Though this could be replaced with something like forever.
+2. Nginx installed and running on cloud server. 
+3. PM2 installed and running on cloud server. Though this could be replaced with something like forever.
+4. LetsEncrypt installed on cloud server. Comment the letsencrypt lines if you don't have that
 
 # What doesn't it do?
 
@@ -63,4 +64,4 @@ See example directory for structuring of app
 ## TODO
 
 * [ ]  Clean up script to remove template files
-* [ ]  Edits package.json with name of app
+* [√]  Edits package.json with name of app
