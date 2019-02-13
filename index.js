@@ -2,15 +2,20 @@
 
 'use strict'
 
+const AppName = process.argv[2]
+if (!AppName) {
+  console.log("no")
+  process.exit(1);
+}
+
 const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process')
 const createNginx = require('./files/nginx.js');
 const createServer = require('./files/server.js');
 const createConf = require('./files/config.js');
-const AppName = process.argv[2]
 function testPort () {
-  const ls = spawn('sh', ['./connect.sh']);
+  const ls = spawn('sh', ['./bin/connect.sh']);
   ls.stdout.on('data', (data) => {
     const NginxData = createNginx(AppName, data);
     const ServerData = createServer(data)
@@ -40,6 +45,18 @@ const createApp = (NginxData, ServerData, ConfData) => {
   fs.writeFile(conf, ConfData, function (err) {
     console.log(`${ConfData} created`)
   })
+  const upload = spawn('sh', ['./bin/upload.sh', AppName]);
+  upload.stdout.on('data', (data) => {
+    console.log('on')
+});
+
+  upload.stderr.on('data', (data) => {
+    console.log(`stderr: ${data}`);
+  });
+
+  upload.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
+  });
 }
 
 testPort()

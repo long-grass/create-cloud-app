@@ -27,6 +27,7 @@
     "build": "webpack --config webpack/prod.config.js && npm run copy",
     "copy": "cp -r src/index.html dist && cp -r public dist",
     "start": "node server.js",
+    "create": "node index.js",
     "deploy": "./bin/deploy.sh"
   },
   "author": "garethrobertlee",

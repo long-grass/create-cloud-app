@@ -1,3 +1,3 @@
-module.exports = (AppName) => `server=AppName
+module.exports = (AppName) => `server=${AppName}
 appname=${AppName}
 `
