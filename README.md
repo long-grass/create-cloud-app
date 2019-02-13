@@ -13,7 +13,7 @@ I felt there was a gap between creating a production build and deploying to a no
 
 To create an app called postcard, running as subdomain at io37.ch
 ```
-./bin/create.sh postcard.io37.ch
+npm create postcard.io37.ch
 ```
 
 This will create a skeleton react/node/nginx app available at https://postcard.io37.ch and add the name to config.env
