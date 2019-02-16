@@ -13,37 +13,23 @@ I felt there was a gap between creating a production build and deploying to a no
 
 To create an app called postcard, running as subdomain at io37.ch
 ```
-npm create postcard.io37.ch
+npm run create postcard.io37.ch
 ```
 
 This will create a skeleton react/node/nginx app available at https://postcard.io37.ch and add the name to config.env
-
-```
-./bin/deploy.sh
-```
-
-Deploy script to push to name of app contained in config.env
-
 
 # What does it do?
 
 ### create.sh
 
 1. creates an nginx file for your app, with app name (eg cadiz) and port set
-2. creates a directory for your app, and uploads the template server.js file, and a dist folder with an index.html inside
+2. creates a directory for your app, and uploads the template server.js file, the created package.json and a dist folder with an index.html inside
 3. install express
 4. starts your app with pm2 
 5. reloads nginx
 
 app should be visible at your url
 
-### deploy.sh
-
-1. rsyncs your server.js and dist folder, from eg something bundled with react. you can add this to a package.json like
-
-```
-deploy: './bin/deploy.sh'
-```
 
 # Requirements
 
@@ -63,5 +49,7 @@ See example directory for structuring of app
 
 ## TODO
 
-* [ ]  Clean up script to remove template files
+* [√]  Move file creation from bash to node
 * [√]  Edits package.json with name of app
+* [√]  Move created app to its own subdir
+* [√]  Re-init git

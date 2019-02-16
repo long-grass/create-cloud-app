@@ -1,0 +1,36 @@
+.sidebarTitle {
+    font-family: Roboto, monospace;
+    position: fixed;
+    display: none;
+    top: 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    word-spacing: 6px
+}
+@media (min-width: 768px) {
+    .sidebarTitle {
+        display: flex
+    }
+}
+.sidebarTitle::before {
+    content: attr(title);
+    transform: rotate(-90deg);
+    white-space: nowrap
+}
+
+
+
+.justifyCenter {
+    justify-content: center
+}
+
+.itemsCenter {
+    align-items: center
+}
+

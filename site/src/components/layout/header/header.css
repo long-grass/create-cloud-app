@@ -1,0 +1,62 @@
+.rightCorner {
+    position: fixed;
+    z-index: 4;
+    left: 50%;
+    bottom: 30px;
+    visibility:hidden;
+}
+@media (min-width: 1000px) {
+    .rightCorner {
+        top: 26px;
+        right: 30px;
+        left: auto;
+        bottom: auto;
+        visibility:visible;
+    }
+}
+.leftCorner {
+    visibility:hidden;
+    position: fixed;
+    top: 26px;
+    left: 65px;
+    z-index: 5;
+    color: cornflowerblue;
+    font-weight:700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 2
+}
+@media (min-width: 768px) {
+    .leftCorner {
+        top: 32px;
+        left: 90px;
+        visibility:visible;
+    }
+}
+
+
+
+
+
+a.checkWeather {
+    display: block;
+    position: relative;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration:none;
+    border: 2px solid #fff;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 19px;
+    white-space: nowrap;
+    box-sizing: content-box;
+    overflow: hidden;
+    background: rgba(37, 44, 102, .5)
+}
+@media (min-width: 900px) {
+    a.checkWeather {
+        background-color: transparent
+    }
+}

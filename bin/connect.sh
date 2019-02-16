@@ -1,4 +1,3 @@
 #!/bin/sh
-server=188.226.163.24
-freeport=$(ssh root@$server freeport.sh)
+freeport=$(ssh root@$1 freeport.sh)
 echo $freeport

@@ -1,12 +1,12 @@
 sftp root@$1 << EOF
   cd /etc/nginx/conf.d
-  put nginx/$1.conf
+  put $1/nginx/$1.conf
   mkdir /var/www/html/$1
   cd /var/www/html/$1
-  put server.js
-  put package.json
+  put $1/server.js
+  put $1/package.json
   mkdir dist
-  put -r dist
+  put -r $1/dist
   bye
 EOF
 ssh root@$1 << EOF
@@ -15,5 +15,5 @@ ssh root@$1 << EOF
   pm2 start server.js --name $1
   service nginx stop
   /opt/letsencrypt/letsencrypt-auto certonly --standalone -d $1
-        service nginx start
+  service nginx start
 EOF
